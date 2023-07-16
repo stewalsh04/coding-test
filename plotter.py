@@ -7,9 +7,6 @@ summary_file = os.getcwd() + "/" + os.sys.argv[1]
 
 df_break = pd.read_csv(summary_file, sep=",")
 
-#print(df_break)
-for col in df_break:
-    print(col)
 # k means
 kmeans = KMeans(n_clusters=2, random_state=0)
 df_break['cluster'] = kmeans.fit_predict(df_break[['NormalisedBreaks', 'TotalNormalisedAsiSIbreaks']])
